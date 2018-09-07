@@ -4,22 +4,37 @@
     <meta charset="UTF-8">
     <title>Tạo và sử đụng hàm 1</title>
     <script>
-    function addNumbers(a,b) {
-        if (a > b) alert("So thu nhat lon hon so thu hai !");
-        else return a + b;
-    }
-    function alertMessage() {
-        alert("Xin chao");
-        let firstNumber = parseInt(prompt("Điền số thứ nhất"));
-        let secondNumber = parseInt(prompt("Điền số thứ hai"));
-        let result = 0;
-        alert(result);
-        result = addNumbers(firstNumber,secondNumber);
-        document.write(result);
-    }
+        let array1 = ["Polaris", "Aldebaran" , "Deneb" , "Vega", "Altair", "Dubhe", "Regulus"];
+        let array2 = ["Ursa Minor" , "Tarurus" , "Cygnus" , "Lyra" , "Aquila" , "Ursa Major" , "Leo"];
+        function findStar(a) {
+            let j = 0;
+            for (let i = 0; i < array1.length; i++) {
+                if (a === array1[i]) {
+                    document.write("Ngôi sao " + array1[i] + " thuộc chòm sao " + array2[i] + " <br />");
+                    ++j;
+                    break;
+                }
+                // else document.write(i + " Không có ngôi sao nào như tên ! <br />");
+            }
+            if (j === 0) document.write("Không có ngôi sao nào như tên !");
+        }
+
+        function addNumbers(a,b) {
+            if (a > b) alert("So thu nhat lon hon so thu hai !");
+            else return a + b;
+        }
+        function alertMessage() {
+            alert("Xin chao");
+            let firstNumber = parseInt(prompt("Điền số thứ nhất"));
+            let secondNumber = parseInt(prompt("Điền số thứ hai"));
+            let result = 0;
+            alert(result);
+            result = addNumbers(firstNumber,secondNumber);
+            document.write(result);
+        }
     </script>
 </head>
-<body onload="alertMessage()">
+<body onload="findStar(prompt('Điền tên ngôi sao'))">
 
 </body>
 </html>
